@@ -1,47 +1,51 @@
 <p id="notice"><%= notice %></p>
 <div class="logo"></div>
-<h1>Washington Capitals - Roster</h1>
-
-<table class="table table-striped">
-  <thead>
-    <tr class=".row">
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Age</th>
-      <th>Position</th>
-      <th>GP</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Points</th>
-      <th>Shots Against</th>
-      <th>Shots Saved</th>
-      <th>Save %</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.nameFirst %></td>
-        <td><%= player.nameLast %></td>
-        <td><%= player.age %></td>
-        <td><%= player.position %></td>
-        <td><%= player.gamesPlayed %></td>
-        <td><%= player.goals %></td>
-        <td><%= player.assists %></td>
-        <td><%= player.points %></td>
-        <td><%= player.shotsAgainst %></td>
-        <td><%= player.shotsSaved %></td>
-        <td><%= player.savePercetage %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class ="jumbotron col-md-10 col-md-offset-1">
+  <h1>Washington Capitals Roster Management System</h1>
+  <p>Developed by: Adam Fink</p>
+  <p>IST297i Spring 2015</p>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-striped">
+    <thead>
+      <tr class=".row">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Position</th>
+        <th>GP</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th>Points</th>
+        <th>Shots Against</th>
+        <th>Shots Saved</th>
+        <th>Save %</th>
+        <th colspan="4"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <td><%= player.nameFirst %></td>
+          <td><%= player.nameLast %></td>
+          <td><%= player.age %></td>
+          <td><%= player.position %></td>
+          <td><%= player.gamesPlayed %></td>
+          <td><%= player.goals %></td>
+          <td><%= player.assists %></td>
+          <td><%= player.points %></td>
+          <td><%= player.shotsAgainst %></td>
+          <td><%= player.shotsSaved %></td>
+          <td><%= player.savePercetage %></td>
+          <td class="btn btn-lg btn-success"><%= link_to 'Show', player %></td>
+          <td class="btn btn-lg btn-warning"><%= link_to 'Edit', edit_player_path(player) %></td>
+          <td class="btn btn-lg btn-danger"><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'New Player', new_player_path %>
