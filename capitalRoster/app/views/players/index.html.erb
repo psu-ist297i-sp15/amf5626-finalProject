@@ -38,9 +38,9 @@
           <td><%= player.shotsAgainst %></td>
           <td><%= player.shotsSaved %></td>
           <td><%= player.savePercetage %></td>
-          <td class="btn btn-lg btn-success"><%= link_to 'Show', player %></td>
-          <td class="btn btn-lg btn-warning"><%= link_to 'Edit', edit_player_path(player) %></td>
-          <td class="btn btn-lg btn-danger"><%= link_to 'Delete', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="btn btn-lg"><%= link_to 'Show', player %></td>
+          <td class="btn btn-lg"><%= link_to 'Edit', edit_player_path(player) %></td>
+          <td class="btn btn-lg"><%= link_to 'Delete', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -48,4 +48,6 @@
 </div>
 <br>
 
-<%= link_to 'New Player', new_player_path %>
+<div class="btn btn-lg col-md-4 col-md-offset-4">
+  <%= link_to 'Create New Player', new_player_path %>
+</div>
