@@ -40,7 +40,7 @@
           <td><%= player.savePercetage %></td>
           <td class="btn btn-lg btn-success"><%= link_to 'Show', player %></td>
           <td class="btn btn-lg btn-warning"><%= link_to 'Edit', edit_player_path(player) %></td>
-          <td class="btn btn-lg btn-danger"><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="btn btn-lg btn-danger"><%= link_to 'Delete', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
