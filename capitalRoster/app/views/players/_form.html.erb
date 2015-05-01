@@ -15,9 +15,10 @@
     <%= f.label :nameFirst %><br>
     <%= f.text_field :nameFirst %>
   </div>
-  <div class="field">
+  <div id="player_lastName" class="field">
     <%= f.label :nameLast %><br>
     <%= f.text_field :nameLast %>
+    <p id="name_warning" class="bg-warning">A player with this last name already exists.  Are you sure?</p>
   </div>
   <div class="field">
     <%= f.label :age %><br>

@@ -7,13 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 
+<!-- Universal Styling for Jumbotrons-->
+<style>
+  .jumbotron {
+  	background-color:red;
+  }
+</style>
+
+
+<!-- Ajax Validation for player last name -->
   <script>
  $(document).ready(function() {
- 	$("#player_assists").on("Blur", function() {
- 		player.points = player.assists + #player.goals;
- 	})
- }
-   </script>
+ 	$("#player_nameLast").on("Blur", function() {
+ 		var flag = true;
+ 		$.ajax({
+ 			url: "/players.json",
+ 			success: function(data_json) {
+ 				for(i=0; i < data_json.length; i++) {
+ 					if (data_json[i].name == $("#player_nameLast").val()) {
+ 						$("#name_warning").show();
+ 						flag = false;
+ 						break;
+ 					}
+ 				}
+ 				if (flag = true) {
+ 				  $("#name_warning").hide();
+ 				}	
+ 			}
+ 		});
+ 	});
+ });
+  </script>
 
 <body>
 
