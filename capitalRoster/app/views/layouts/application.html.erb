@@ -6,6 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+  <script>
+ $(document).ready(function() {
+ 	$("#player_assists").on("Blur", function() {
+ 		player.points = player.assists + #player.goals;
+ 	})
+ }
+   </script>
+
 <body>
 
 <%= yield %>
