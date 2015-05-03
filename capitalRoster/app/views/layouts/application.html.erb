@@ -11,7 +11,10 @@
 <style>
   .jumbotron {
   	/*background-color:red;*/
-  	background-image: url("../../assets/images/RocktheRed.jpg");
+  	background-image: url("/images/RocktheRed.jpg");
+  }
+  #name_warning {
+    display:none;
   }
 </style>
 
@@ -19,19 +22,19 @@
 <!-- Ajax Validation for player last name -->
   <script>
  $(document).ready(function() {
- 	$("#player_nameLast").on("Blur", function() {
+ 	$("#player_nameLast").on("blur", function() {
  		var flag = true;
  		$.ajax({
  			url: "/players.json",
  			success: function(data_json) {
- 				for(i=0; i < data_json.length; i++) {
- 					if (data_json[i].name == $("#player_nameLast").val()) {
+        for(i=0; i < data_json.length; i++) {
+ 					if (data_json[i].nameLast == $("#player_nameLast").val()) {
  						$("#name_warning").show();
  						flag = false;
  						break;
  					}
  				}
- 				if (flag = true) {
+ 				if (flag == true) {
  				  $("#name_warning").hide();
  				}	
  			}
