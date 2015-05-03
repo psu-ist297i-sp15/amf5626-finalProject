@@ -6,6 +6,43 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<!-- Universal Styling for Jumbotrons-->
+<style>
+  .jumbotron {
+  	/*background-color:red;*/
+  	background-image: url("/images/RocktheRed.jpg");
+  }
+  #name_warning {
+    display:none;
+  }
+</style>
+
+
+<!-- Ajax Validation for player last name -->
+  <script>
+ $(document).ready(function() {
+ 	$("#player_nameLast").on("blur", function() {
+ 		var flag = true;
+ 		$.ajax({
+ 			url: "/players.json",
+ 			success: function(data_json) {
+        for(i=0; i < data_json.length; i++) {
+ 					if (data_json[i].nameLast == $("#player_nameLast").val()) {
+ 						$("#name_warning").show();
+ 						flag = false;
+ 						break;
+ 					}
+ 				}
+ 				if (flag == true) {
+ 				  $("#name_warning").hide();
+ 				}	
+ 			}
+ 		});
+ 	});
+ });
+  </script>
+
 <body>
 
 <%= yield %>

@@ -1,59 +1,59 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div style="background-color:red;" class="jumbotron col-md-10 col-md-offset-1">
+    <h1>
+      <%= @player.nameFirst %>
+      <%= @player.nameLast %> --
+      <%= @player.position %>
+    </h1>  
+  </div>
+</div>
 
-<p>
-  <strong>Namefirst:</strong>
-  <%= @player.nameFirst %>
-</p>
-
-<p>
-  <strong>Namelast:</strong>
-  <%= @player.nameLast %>
-</p>
-
-<p>
+<h2 class="col-md-offset-1">
   <strong>Age:</strong>
   <%= @player.age %>
-</p>
+</h2>
 
-<p>
-  <strong>Position:</strong>
-  <%= @player.position %>
-</p>
-
-<p>
-  <strong>Gamesplayed:</strong>
+<h2 class="col-md-offset-1">
+  <strong>Games Played:</strong>
   <%= @player.gamesPlayed %>
-</p>
+</h2>
 
-<p>
+<h2 class="col-md-offset-1">
   <strong>Goals:</strong>
   <%= @player.goals %>
-</p>
+</h2>
 
-<p>
+<h2 class="col-md-offset-1">
   <strong>Assists:</strong>
   <%= @player.assists %>
-</p>
+</h2>
 
-<p>
+<h2 class="col-md-offset-1">
   <strong>Points:</strong>
   <%= @player.points %>
-</p>
+</h2>
 
-<p>
-  <strong>Shotsagainst:</strong>
+<h2 class="col-md-offset-1">
+  <strong>Shots Against:</strong>
   <%= @player.shotsAgainst %>
-</p>
+</h2>
 
-<p>
-  <strong>Shotssaved:</strong>
+<h2 class="col-md-offset-1">
+  <strong>Shots Saved:</strong>
   <%= @player.shotsSaved %>
-</p>
+</h2>
 
-<p>
-  <strong>Savepercetage:</strong>
+<h2 class="col-md-offset-1">
+  <strong>Save Percentage:</strong>
   <%= @player.savePercetage %>
-</p>
+</h2>
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<div class="col-md-offset-1">
+  <div class="btn btn-lg btn-primary">
+    <%= link_to 'Back to Players', players_path %>
+  </div>
+  <div class="btn btn-lg btn-warning">
+    <%= link_to 'Edit', edit_player_path(@player) %>
+  </div>
+</div>
