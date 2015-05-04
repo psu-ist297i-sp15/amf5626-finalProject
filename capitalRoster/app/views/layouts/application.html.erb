@@ -23,18 +23,18 @@
   <script>
  $(document).ready(function() {
  	$("#player_nameLast").on("blur", function() {
- 		var flag = true;
+ 		var nameFlag = true;
  		$.ajax({
  			url: "/players.json",
  			success: function(data_json) {
         for(i=0; i < data_json.length; i++) {
  					if (data_json[i].nameLast == $("#player_nameLast").val()) {
  						$("#name_warning").show();
- 						flag = false;
+ 						nameFlag = false;
  						break;
  					}
  				}
- 				if (flag == true) {
+ 				if (nameFlag == true) {
  				  $("#name_warning").hide();
  				}	
  			}
